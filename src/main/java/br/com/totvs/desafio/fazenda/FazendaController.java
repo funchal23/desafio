@@ -9,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.net.URI;
-import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class FazendaController {
     private final FazendaService fazendaService;
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestBody FazendaRequest fazendaRequest){
+    public ResponseEntity<?> save(@RequestBody @Valid FazendaRequest fazendaRequest){
         Fazenda fazenda = new Fazenda(fazendaRequest);
         fazendaService.criarUmaFazenda(fazenda);
         return ResponseEntity

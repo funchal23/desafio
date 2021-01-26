@@ -19,12 +19,8 @@ public class Fazenda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @NotNull
-    @NotEmpty
-    @Size(max = 200)
     @Column(unique = true)
     private String nome;
-    @CNPJ(message = "CNPJ INVALIDO")
     private String cnpj;
     @Embedded
     private Endereco endereco;
