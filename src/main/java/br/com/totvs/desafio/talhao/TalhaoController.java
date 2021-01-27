@@ -1,5 +1,7 @@
 package br.com.totvs.desafio.talhao;
 
+import br.com.totvs.desafio.evento.EventoTalhaoService;
+import br.com.totvs.desafio.evento.TemEventoNoTalhaoQueDesejaExcluirException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,18 +21,25 @@ public class TalhaoController {
 
     private final TalhaoService talhaoService;
 
+    private final EventoTalhaoService eventoTalhaoService;
+
     @PostMapping("/{idFazenda}")
-    public ResponseEntity<?> insereTalhaoNaFazenda(@PathVariable("idFazenda") UUID idFazenda,@RequestBody @Valid TalhaoRequest talhaoRequest) throws Exception {
+    public ResponseEntity<?> insereTalhaoNaFazenda(@PathVariable("idFazenda") UUID idFazenda, @RequestBody @Valid TalhaoRequest talhaoRequest) throws Exception {
         Talhao talhao = talhaoService.insereTalhao(talhaoRequest, idFazenda);
         return ResponseEntity
-                .created(URI.create("http://localhost:8080/api/v1/talhao/" + idFazenda + "/"+ talhao.getId()))
+                .created(URI.create("http://localhost:8080/api/v1/talhao/" + idFazenda + "/" + talhao.getId()))
                 .build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> alteraNomeEstimativa(@PathVariable("id") UUID id, @RequestBody @Valid TalhaoRequestPut talhaoRequestPut) throws Exception {
-        talhaoService.alteraAreaEstimativa(talhaoRequestPut, id);
-        return ResponseEntity.ok().build();
+        boolean contemEventoNoTalhao = eventoTalhaoService.temEventoNoTalhao(id);
+        if (contemEventoNoTalhao) {
+            throw new TemEventoNoTalhaoQueDesejaExcluirException();
+        } else {
+            talhaoService.alteraAreaEstimativa(talhaoRequestPut, id);
+            return ResponseEntity.ok().build();
+        }
     }
 
     @GetMapping("/fazenda/{idFazenda}")
@@ -47,7 +56,12 @@ public class TalhaoController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> excluiTalhaoPorId(@PathVariable("id") UUID id) throws Exception {
-        talhaoService.excluiPorId(id);
-        return ResponseEntity.ok().build();
+        boolean contemEventoNoTalhao = eventoTalhaoService.temEventoNoTalhao(id);
+        if (contemEventoNoTalhao) {
+            throw new TemEventoNoTalhaoQueDesejaExcluirException();
+        } else {
+            talhaoService.excluiPorId(id);
+            return ResponseEntity.ok().build();
+        }
     }
 }
