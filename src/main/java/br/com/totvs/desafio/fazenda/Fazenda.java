@@ -3,12 +3,8 @@ package br.com.totvs.desafio.fazenda;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.UUID;
 
 @Getter
@@ -21,6 +17,7 @@ public class Fazenda {
     private UUID id;
     @Column(unique = true)
     private String nome;
+    @Column(unique = true)
     private String cnpj;
     @Embedded
     private Endereco endereco;

@@ -66,7 +66,9 @@ public class TalhaoTest {
         Mockito.when(fazendaRepository.findById(indice)).thenReturn(java.util.Optional.of(fazenda));
         Mockito.when(talhaoRepository.findByFazendaAndCodigo(fazenda, talhaoRequest.getCodigo())).thenReturn(Optional.empty());
         talhaoService.insereTalhao(talhaoRequest, indice);
-        Mockito.verify(talhaoRepository).save(new Talhao(talhaoRequest));
+        Talhao novoTalhao = new Talhao(talhaoRequest);
+        novoTalhao.setFazenda(fazenda);
+        Mockito.verify(talhaoRepository).save(novoTalhao);
     }
 
     @Test

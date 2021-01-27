@@ -6,9 +6,9 @@ import br.com.totvs.desafio.fazenda.FazendaRepository;
 import br.com.totvs.desafio.comum.ListaVaziaException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -24,9 +24,10 @@ public class TalhaoService {
         Fazenda fazenda = fazendaRepository.findById(idFazenda).orElseThrow(() -> new FazendaNaoEncontradaException("Ao tentar inserir talhão a fazenda não foi encontrada"));
         Optional<Talhao> talhao = talhaoRepository.findByFazendaAndCodigo(fazenda, talhaoRequest.getCodigo());
         if(talhao.isEmpty()){
-           Talhao talhaoRetornado = new Talhao(talhaoRequest);
-           talhaoRepository.save(talhaoRetornado);
-           return talhaoRetornado;
+           Talhao novoTalhao = new Talhao(talhaoRequest);
+           novoTalhao.setFazenda(fazenda);
+           talhaoRepository.save(novoTalhao);
+           return novoTalhao;
         } else {
             throw new TalhaoComCodigoExistenteNaFazendaException("Para a fazenda: " + fazenda.getNome() + " já existe o código de talhao: " + talhaoRequest.getCodigo());
         }
@@ -43,11 +44,11 @@ public class TalhaoService {
         return talhao;
     }
 
-    public Page<Fazenda> buscarPaginado(UUID idFazenda, Pageable page) throws Exception {
+    public Page<Talhao> buscarPaginado(UUID idFazenda, Pageable page) throws Exception {
         Fazenda fazenda = fazendaRepository.findById(idFazenda).orElseThrow(() -> new FazendaNaoEncontradaException("Ao tentar buscar talhões a fazenda não foi encontrada"));
-        Page<Fazenda> fazendas = fazendaRepository.findAllByFazenda(fazenda, page);
-        if(!fazendas.isEmpty()){
-            return fazendas;
+        Page<Talhao> talhoes = talhaoRepository.findByFazenda(fazenda, page);
+        if(!talhoes.isEmpty()){
+            return talhoes;
         } else {
             throw new ListaVaziaException("Nenhum talhao foi encontrado no banco de dados");
         }
