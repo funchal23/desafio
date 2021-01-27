@@ -51,11 +51,9 @@ public class Talhao {
     public float buscaAreaDisponivelPorEvento(TipoEvento tipoEvento) {
         float areaParaSerDevolvida = 0;
         for (EventoTalhao eventoTalhao:this.eventosDoTalhao) {
-            if(eventoTalhao.getTipoEvento() == tipoEvento){
+            if(eventoTalhao.getTipoEvento() == tipoEvento)
                 areaParaSerDevolvida += eventoTalhao.getArea();
-            }
         }
-        areaParaSerDevolvida -= this.area;
-        return areaParaSerDevolvida;
+        return this.area - areaParaSerDevolvida;
     }
 }
