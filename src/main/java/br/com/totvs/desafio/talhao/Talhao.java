@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -55,5 +54,14 @@ public class Talhao {
                 areaParaSerDevolvida += eventoTalhao.getArea();
         }
         return this.area - areaParaSerDevolvida;
+    }
+
+    public boolean confereSeTemEventoDeEncerramento() {
+        for (EventoTalhao eventoTalhao:this.eventosDoTalhao) {
+            if(eventoTalhao.getTipoEvento() == TipoEvento.ENCERRAMENTO){
+                return true;
+            }
+        }
+        return false;
     }
 }
