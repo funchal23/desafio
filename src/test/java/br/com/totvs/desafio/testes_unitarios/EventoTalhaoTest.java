@@ -4,6 +4,8 @@ import br.com.totvs.desafio.evento.dominio.EventoTalhao;
 import br.com.totvs.desafio.evento.dominio.EventoTalhaoRepository;
 import br.com.totvs.desafio.evento.dominio.EventoTalhaoService;
 import br.com.totvs.desafio.evento.dominio.TipoEvento;
+import br.com.totvs.desafio.evento.exception.AreaDoEventoMaiorQueAreaDoTalhaoException;
+import br.com.totvs.desafio.evento.exception.EventoDeEncerramentoJaExistenteException;
 import br.com.totvs.desafio.fazenda.dominio.Fazenda;
 import br.com.totvs.desafio.fazenda.api.FazendaRequest;
 import br.com.totvs.desafio.talhao.dominio.Talhao;
