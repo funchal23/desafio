@@ -1,4 +1,4 @@
-package br.com.totvs.desafio.evento;
+package br.com.totvs.desafio.evento.dominio;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

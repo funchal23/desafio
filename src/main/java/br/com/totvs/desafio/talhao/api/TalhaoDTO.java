@@ -1,5 +1,6 @@
-package br.com.totvs.desafio.talhao;
+package br.com.totvs.desafio.talhao.api;
 
+import br.com.totvs.desafio.talhao.dominio.Talhao;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.domain.Page;

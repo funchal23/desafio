@@ -1,4 +1,4 @@
-package br.com.totvs.desafio.evento;
+package br.com.totvs.desafio.evento.exception;
 
 public class EventoDeEncerramentoJaExistenteException extends Exception{
     public EventoDeEncerramentoJaExistenteException(){

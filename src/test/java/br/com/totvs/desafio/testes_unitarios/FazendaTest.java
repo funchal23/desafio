@@ -1,6 +1,10 @@
 package br.com.totvs.desafio.testes_unitarios;
 
-import br.com.totvs.desafio.fazenda.*;
+import br.com.totvs.desafio.fazenda.api.FazendaRequest;
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
+import br.com.totvs.desafio.fazenda.dominio.FazendaRepository;
+import br.com.totvs.desafio.fazenda.dominio.FazendaService;
+import br.com.totvs.desafio.fazenda.exception.FazendaNaoEncontradaException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

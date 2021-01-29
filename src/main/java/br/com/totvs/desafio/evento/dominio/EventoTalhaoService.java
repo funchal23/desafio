@@ -1,8 +1,11 @@
-package br.com.totvs.desafio.evento;
+package br.com.totvs.desafio.evento.dominio;
 
-import br.com.totvs.desafio.talhao.Talhao;
-import br.com.totvs.desafio.talhao.TalhaoNaoEncontradoException;
-import br.com.totvs.desafio.talhao.TalhaoRepository;
+
+import br.com.totvs.desafio.evento.exception.AreaDoEventoMaiorQueAreaDoTalhaoException;
+import br.com.totvs.desafio.evento.exception.EventoDeEncerramentoJaExistenteException;
+import br.com.totvs.desafio.talhao.dominio.Talhao;
+import br.com.totvs.desafio.talhao.dominio.TalhaoRepository;
+import br.com.totvs.desafio.talhao.exception.TalhaoNaoEncontradoException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

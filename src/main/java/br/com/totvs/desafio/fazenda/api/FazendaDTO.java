@@ -1,5 +1,6 @@
-package br.com.totvs.desafio.fazenda;
+package br.com.totvs.desafio.fazenda.api;
 
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.domain.Page;

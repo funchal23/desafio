@@ -1,7 +1,9 @@
-package br.com.totvs.desafio.talhao;
+package br.com.totvs.desafio.talhao.api;
 
-import br.com.totvs.desafio.evento.EventoTalhaoService;
-import br.com.totvs.desafio.evento.TemEventoNoTalhaoQueDesejaExcluirException;
+import br.com.totvs.desafio.evento.dominio.EventoTalhaoService;
+import br.com.totvs.desafio.evento.exception.TemEventoNoTalhaoQueDesejaExcluirException;
+import br.com.totvs.desafio.talhao.dominio.Talhao;
+import br.com.totvs.desafio.talhao.dominio.TalhaoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

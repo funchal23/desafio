@@ -1,16 +1,18 @@
 package br.com.totvs.desafio.testes_unitarios;
 
-import br.com.totvs.desafio.evento.*;
-import br.com.totvs.desafio.fazenda.Fazenda;
-import br.com.totvs.desafio.fazenda.FazendaRequest;
-import br.com.totvs.desafio.talhao.Talhao;
-import br.com.totvs.desafio.talhao.TalhaoNaoEncontradoException;
-import br.com.totvs.desafio.talhao.TalhaoRepository;
+import br.com.totvs.desafio.evento.dominio.EventoTalhao;
+import br.com.totvs.desafio.evento.dominio.EventoTalhaoRepository;
+import br.com.totvs.desafio.evento.dominio.EventoTalhaoService;
+import br.com.totvs.desafio.evento.dominio.TipoEvento;
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
+import br.com.totvs.desafio.fazenda.api.FazendaRequest;
+import br.com.totvs.desafio.talhao.dominio.Talhao;
+import br.com.totvs.desafio.talhao.exception.TalhaoNaoEncontradoException;
+import br.com.totvs.desafio.talhao.dominio.TalhaoRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.Execution;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;

@@ -1,9 +1,7 @@
-package br.com.totvs.desafio.fazenda;
+package br.com.totvs.desafio.fazenda.dominio;
 
-import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.print.Pageable;
 import java.util.UUID;
 
 public interface FazendaRepository extends JpaRepository<Fazenda, UUID> {

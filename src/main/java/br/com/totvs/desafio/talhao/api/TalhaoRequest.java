@@ -1,4 +1,4 @@
-package br.com.totvs.desafio.talhao;
+package br.com.totvs.desafio.talhao.api;
 
 import lombok.Getter;
 import lombok.Setter;

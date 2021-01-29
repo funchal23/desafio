@@ -1,6 +1,5 @@
-package br.com.totvs.desafio.evento;
+package br.com.totvs.desafio.evento.dominio;
 
-import br.com.totvs.desafio.talhao.Talhao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

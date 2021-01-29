@@ -1,10 +1,16 @@
 package br.com.totvs.desafio.testes_unitarios;
 
-import br.com.totvs.desafio.fazenda.Fazenda;
-import br.com.totvs.desafio.fazenda.FazendaNaoEncontradaException;
-import br.com.totvs.desafio.fazenda.FazendaRepository;
-import br.com.totvs.desafio.fazenda.FazendaRequest;
-import br.com.totvs.desafio.talhao.*;
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
+import br.com.totvs.desafio.fazenda.exception.FazendaNaoEncontradaException;
+import br.com.totvs.desafio.fazenda.dominio.FazendaRepository;
+import br.com.totvs.desafio.fazenda.api.FazendaRequest;
+import br.com.totvs.desafio.talhao.dominio.TalhaoRepository;
+import br.com.totvs.desafio.talhao.api.TalhaoRequest;
+import br.com.totvs.desafio.talhao.api.TalhaoRequestPut;
+import br.com.totvs.desafio.talhao.dominio.Talhao;
+import br.com.totvs.desafio.talhao.dominio.TalhaoService;
+import br.com.totvs.desafio.talhao.exception.TalhaoComCodigoExistenteNaFazendaException;
+import br.com.totvs.desafio.talhao.exception.TalhaoNaoEncontradoException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

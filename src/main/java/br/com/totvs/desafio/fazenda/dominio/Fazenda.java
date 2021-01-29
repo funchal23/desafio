@@ -1,5 +1,6 @@
-package br.com.totvs.desafio.fazenda;
+package br.com.totvs.desafio.fazenda.dominio;
 
+import br.com.totvs.desafio.fazenda.api.FazendaRequest;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

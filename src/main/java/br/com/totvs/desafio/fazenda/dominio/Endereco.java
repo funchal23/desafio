@@ -1,4 +1,4 @@
-package br.com.totvs.desafio.fazenda;
+package br.com.totvs.desafio.fazenda.dominio;
 
 import lombok.Getter;
 

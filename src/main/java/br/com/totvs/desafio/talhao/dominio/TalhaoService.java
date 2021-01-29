@@ -1,9 +1,13 @@
-package br.com.totvs.desafio.talhao;
+package br.com.totvs.desafio.talhao.dominio;
 
-import br.com.totvs.desafio.fazenda.Fazenda;
-import br.com.totvs.desafio.fazenda.FazendaNaoEncontradaException;
-import br.com.totvs.desafio.fazenda.FazendaRepository;
-import br.com.totvs.desafio.comum.ListaVaziaException;
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
+import br.com.totvs.desafio.fazenda.exception.FazendaNaoEncontradaException;
+import br.com.totvs.desafio.fazenda.dominio.FazendaRepository;
+import br.com.totvs.desafio.comum.exception.ListaVaziaException;
+import br.com.totvs.desafio.talhao.api.TalhaoRequest;
+import br.com.totvs.desafio.talhao.api.TalhaoRequestPut;
+import br.com.totvs.desafio.talhao.exception.TalhaoComCodigoExistenteNaFazendaException;
+import br.com.totvs.desafio.talhao.exception.TalhaoNaoEncontradoException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

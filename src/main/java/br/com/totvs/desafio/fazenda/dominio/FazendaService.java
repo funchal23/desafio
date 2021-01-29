@@ -1,6 +1,7 @@
-package br.com.totvs.desafio.fazenda;
+package br.com.totvs.desafio.fazenda.dominio;
 
-import br.com.totvs.desafio.comum.ListaVaziaException;
+import br.com.totvs.desafio.comum.exception.ListaVaziaException;
+import br.com.totvs.desafio.fazenda.exception.FazendaNaoEncontradaException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

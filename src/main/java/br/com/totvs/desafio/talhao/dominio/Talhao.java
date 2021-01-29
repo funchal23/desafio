@@ -1,8 +1,9 @@
-package br.com.totvs.desafio.talhao;
+package br.com.totvs.desafio.talhao.dominio;
 
-import br.com.totvs.desafio.evento.EventoTalhao;
-import br.com.totvs.desafio.evento.TipoEvento;
-import br.com.totvs.desafio.fazenda.Fazenda;
+import br.com.totvs.desafio.evento.dominio.EventoTalhao;
+import br.com.totvs.desafio.evento.dominio.TipoEvento;
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
+import br.com.totvs.desafio.talhao.api.TalhaoRequest;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

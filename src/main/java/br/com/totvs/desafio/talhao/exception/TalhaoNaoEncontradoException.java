@@ -1,4 +1,4 @@
-package br.com.totvs.desafio.talhao;
+package br.com.totvs.desafio.talhao.exception;
 
 public class TalhaoNaoEncontradoException extends Exception {
     public TalhaoNaoEncontradoException(String mensagem) {

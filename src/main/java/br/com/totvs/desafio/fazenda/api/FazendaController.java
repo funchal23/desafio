@@ -1,5 +1,8 @@
-package br.com.totvs.desafio.fazenda;
+package br.com.totvs.desafio.fazenda.api;
 
+import br.com.totvs.desafio.fazenda.dominio.Fazenda;
+import br.com.totvs.desafio.fazenda.exception.FazendaNaoEncontradaException;
+import br.com.totvs.desafio.fazenda.dominio.FazendaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
